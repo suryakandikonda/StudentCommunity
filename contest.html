@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Contest</title>
+  </head>
+  <body style="background-color: black; color: white;">
+    <!--NAV BAR-->
+    <a id="ddmenuLink" href="nav.html"></a>
+
+
+    <div style="margin: 30px;">
+
+    <div style="margin-top: 100px; text-align: center; font-family: Verdana; border:5px solid white; border-radius: 20px;">
+      <h4>Contest begins in....</h4><br><br>
+      <p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 7, 2018 22:09:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "Getting information from the server.... (Refresh this page)";
+    }
+}, 1000);
+</script>
+    </div>
+  </div>
+
+    <div class="container" style="margin-top: 50px;">
+  <div class="right">
+      <h4 class="randoms"></h4>
+      <h1 class="randoms"></h1>
+      <h4 class="randoms"></h4>
+  </div>
+  <div class="left">
+      <h4 class="randoms"></h4>
+      <h1 class="randoms"></h1>
+      <h4 class="randoms"></h4>
+  </div>
+</div>
+
+
+<style type="text/css">
+  * {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background: #000;
+}
+
+body {
+    background: #053d4e;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( to bottom right, rgba(6, 0, 255, 0.3), rgba(255, 0, 0, 0.3));
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.right {
+    float: left;
+    color: #FFF;
+    width: 50%;
+    text-align: right;
+}
+
+.left {
+    float: left;
+    color: #7a7a7a;
+    width: 50%;
+    text-align: right;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    margin-top: 40px;
+}
+
+h1,
+h4 {
+    -webkit-transition: opacity .25s;
+    -moz-transition: opacity .25s;
+    -o-transition: opacity .25s;
+    -ms-transition: opacity .25s;
+    transition: opacity .25s;
+    font-family: "FARCRY", Verdana, Tahoma;
+}
+
+h1 {
+    font-size: 6vw;
+}
+
+h4 {
+    font-size: 3vw;
+}
+
+h4:first-child {
+    margin-bottom: -2vw;
+}
+
+h4:last-child {
+    margin-top: -1.7vw;
+}
+</style>
+
+
+<script type="text/javascript">
+  var words = ["Students","Community","Live","Contests","Programming","Communication","Aptitude","Logics","Online"];
+
+window.addEventListener("load", function() {
+    var randoms = window.document.getElementsByClassName("randoms");
+    for (i = 0; i < randoms.length; i++)
+        changeWord(randoms[i]);
+}, false);
+
+function changeWord(a) {
+    a.style.opacity = '0.1';
+    a.innerHTML = words[getRandomInt(0, words.length - 1)];
+    setTimeout(function() {
+        a.style.opacity = '1';
+    }, 425);
+    setTimeout(function() {
+        changeWord(a);
+    }, getRandomInt(500, 800));
+}
+
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+</script>
+  <!--Script for Nav Bar-->
+<script src="js/ddmenu.js" type="text/javascript"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>

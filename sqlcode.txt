@@ -1,0 +1,24 @@
+CREATE TABLE comments (
+    cid int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    uid varchar(128) not null,
+    date datetime not null,
+    message TEXT not null
+);
+
+
+
+CREATE TABLE programmingclubadmins (
+    user_id int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    user_email varchar(256) not null,
+    user_uid varchar(256) not null,
+    user_pwd varchar(256) not null
+);
+
+
+CREATE TABLE programmingclubuploads (
+    cid int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    title varchar(256) not null,
+    content longtext not null,
+    filename varchar(256) not null,
+    date datetime not null
+);
